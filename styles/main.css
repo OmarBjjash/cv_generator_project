@@ -238,3 +238,15 @@ footer { text-align: center; padding: 30px 0; margin-top: 50px; border-top: 1px 
         padding: 5px 10px;
     }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    /* Use a box-shadow to set the background color, which overrides the browser's default */
+    -webkit-box-shadow: 0 0 0 30px var(--body-bg) inset !important;
+    /* Set the text color to match the theme */
+    -webkit-text-fill-color: var(--text) !important;
+    /* Ensure the border color also matches */
+    border-color: var(--light-gray) !important;
+}
