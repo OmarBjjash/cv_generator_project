@@ -248,5 +248,5 @@ input:-webkit-autofill:active {
     /* Set the text color to match the theme */
     -webkit-text-fill-color: var(--text) !important;
     /* Ensure the border color also matches */
-    border-color: var(--light-gray) !important;
+    border-color: var(--dark) !important;
 }
