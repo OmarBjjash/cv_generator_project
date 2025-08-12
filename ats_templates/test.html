@@ -1,0 +1,133 @@
+<style>
+    /* MODERN ATS TEMPLATE - Letter size optimized */
+    .modern-ats {
+        font-family: Calibri, Arial, sans-serif;
+        font-size: 11pt;
+        line-height: 1.4;
+        color: #2c3e50;
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto;
+        padding: 0.5in;
+        box-sizing: border-box;
+    }
+    .modern-ats .header {
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    .modern-ats h1 {
+        font-size: 28px;
+        color: #2c3e50;
+        margin: 5px 0 8px 0;
+    }
+    .modern-ats .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 10.5pt;
+        justify-content: center;
+    }
+    .modern-ats .section {
+        margin-bottom: 18px;
+    }
+    .modern-ats .section-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #3498db;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid #ecf0f1;
+    }
+    .modern-ats .item {
+        margin-bottom: 12px;
+        page-break-inside: avoid;
+    }
+    .modern-ats .item-header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .modern-ats .item-title {
+        font-weight: bold;
+        font-size: 12pt;
+        width: 70%;
+    }
+    .modern-ats .company {
+        font-style: italic;
+        margin: 3px 0;
+        width: 100%;
+    }
+    .modern-ats .date {
+        color: #7f8c8d;
+        font-size: 10pt;
+        text-align: right;
+        width: 30%;
+    }
+    .modern-ats .skills {
+        columns: 3;
+        column-gap: 20px;
+        margin-top: 5px;
+    }
+    .modern-ats .skills span {
+        display: block;
+        margin-bottom: 4px;
+    }
+    @media print {
+        body, html {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .modern-ats {
+            padding: 0.5in !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+</style>
+
+<div class="modern-ats">
+    <div class="header">
+        <h1>{{name}}</h1>
+        <div class="contact">{{contactInfo}}</div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p>{{summaryContent}}</p>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Work Experience</div>
+        {{#each expArray}}
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">{{title}}</div>
+                <div class="date">{{dates}}</div>
+            </div>
+            <div class="company">{{company}}</div>
+            <ul>{{{description}}}</ul>
+        </div>
+        {{/each}}
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Education</div>
+        {{#each educationItems}}
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">{{degree}}</div>
+                <div class="date">{{dates}}</div>
+            </div>
+            <div class="company">{{institution}}</div>
+        </div>
+        {{/each}}
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills">{{{skillsArray}}}</div>
+    </div>
+</div>

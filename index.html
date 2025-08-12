@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeForge | ATS-Optimized CV Generator</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-file-contract"></i>
+                <h1>ResumeForge</h1>
+                <div class="tagline">ATS-Optimized CV Generator</div>
+            </div>
+            <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+                <span>Dark Mode</span>
+            </div>
+        </header>
+
+        <div class="app-container">
+            <div class="form-section fade-in">
+                <h2 class="section-title"><i class="fas fa-user-edit"></i> Personal Information</h2>
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" placeholder="Jane Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobTitle">Job Title / Headline</label>
+                    <input type="text" id="jobTitle" placeholder="Cybersecurity Analyst">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" placeholder="jane.doe@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="+1 (123) 456-7890">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address / Location</label>
+                    <input type="text" id="address" placeholder="Your City, ST">
+                </div>
+                <div class="form-group">
+                    <label for="websites">Websites (LinkedIn, GitHub, etc., comma-separated)</label>
+                    <input type="text" id="websites" placeholder="linkedin.com/in/..., github.com/...">
+                </div>
+                <div class="form-group">
+                    <label for="summary">Summary</label>
+                    <textarea id="summary" rows="3" placeholder="SOC analyst with three years experience..."></textarea>
+                </div>
+
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+                 <div id="experience-container">
+                    </div>
+                 <div class="add-item" id="addExperience">
+                    <i class="fas fa-plus"></i> Add Experience
+                </div>
+
+                <h2 class="section-title"><i class="fas fa-tools"></i> Skills</h2>
+                <div class="form-group">
+                    <label for="skills">Skills (separate with commas)</label>
+                    <textarea id="skills" rows="3" placeholder="SIEM, Splunk, Wireshark, Python..."></textarea>
+                </div>
+
+                <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+                <div class="form-group">
+                    <label for="certificates">Certifications (separate with commas)</label>
+                    <textarea id="certificates" rows="3" placeholder="CompTIA Security+, Splunk Core Certified Power User..."></textarea>
+                </div>
+                
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div id="education-container">
+                    </div>
+                 <div class="add-item" id="addEducation">
+                    <i class="fas fa-plus"></i> Add Education
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="previewBtn">
+                        <i class="fas fa-eye"></i> Preview & Download
+                    </button>
+                    <button class="btn btn-outline" id="resetBtn">
+                        <i class="fas fa-redo"></i> Reset Form
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 ResumeForge - ATS-Optimized CV Generator</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="previewModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Resume Preview</h2>
+                <button id="closeModal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-toolbar">
+                    <div class="template-selector">
+                        <div class="template active" data-template="Professional"><i class="fas fa-file-alt"></i> Professional</div>
+                        <div class="template" data-template="Modern"><i class="fas fa-briefcase"></i> Modern</div>
+                        <div class="template" data-template="Executive"><i class="fas fa-chart-line"></i> Executive</div>
+                        <div class="template" data-template="Analyst"><i class="fas fa-user-shield"></i> Analyst</div>
+                    </div>
+                    <button class="btn btn-primary" id="downloadBtn"><i class="fas fa-download"></i> Download as PDF</button>
+                </div>
+                <div class="cv-preview" id="cvPreview">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

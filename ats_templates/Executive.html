@@ -1,0 +1,74 @@
+<style>
+    .executive {
+        font-family: 'Garamond', 'Times New Roman', serif;
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #333;
+    }
+    .executive .cv-header {
+        text-align: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        /* border-bottom: 2px solid #333; */
+    }
+    /* ✨ UPDATED: Font sizes adjusted for a more classic, balanced look */
+    .executive .cv-header h1 {
+        font-size: 30pt;
+        margin: 0;
+        font-weight: bold;
+    }
+    .executive .contact-info {
+        font-size: 12pt;
+        color: #555;
+        margin-top: 5px;
+    }
+    .executive .section {
+        margin-bottom: 20px;
+    }
+    .executive .section-title {
+        font-size: 16pt;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    .executive .item {
+        margin-bottom: 15px;
+    }
+    .executive .item h3 {
+        font-size: 14pt;
+        margin-bottom: 2px;
+        font-weight: bold;
+    }
+    .executive .item .subtitle {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 2px;
+        font-size: 14pt;
+    }
+    .executive .item .date {
+        color: #777;
+        font-size: 12pt;
+        font-style: italic;
+    }
+    .executive .skills-list, .executive .certificates-list {
+        padding-top: 5px;
+    }
+    .executive ul {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        list-style-position: outside;
+        padding-left: 20px;
+    }
+    .executive li {
+        margin-bottom: 5px;
+    }
+</style>
+<div class="cv-header">
+    <h1>{{name}}</h1>
+    <div class="job-title">{{jobTitle}}</div>
+    <div class="contact-info">{{contactInfo}}</div>
+</div>
+{{bodySections}}

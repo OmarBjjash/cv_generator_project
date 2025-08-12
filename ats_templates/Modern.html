@@ -1,0 +1,179 @@
+<!-- <style>
+    .modern {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.5;
+        color: #444;
+    }
+    .modern .cv-header {
+        margin-bottom: 25px;
+    }
+    /* ✨ UPDATED: Font sizes adjusted for professional hierarchy */
+    .modern .cv-header h1 {
+        font-size: 30pt;
+        color: #2c3e50;
+        margin-bottom: 5px;
+        font-weight: 300;
+        text-align: center;
+    }
+    .modern .contact-info {
+        font-size: 11pt;
+        color: #555;
+        text-align: center;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        padding: 8px 0;
+        margin-bottom: 25px;
+    }
+    .modern .section {
+        margin-bottom: 20px;
+    }
+    .modern .section-title {
+        font-size: 16pt;
+        color: #34495e;
+        margin-bottom: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .modern .item {
+        margin-bottom: 15px;
+    }
+    .modern .item h3 {
+        font-size: 12pt;
+        margin-bottom: 2px;
+        font-weight: bold;
+        color: #3498db;
+    }
+    .modern .item .subtitle {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 2px;
+        font-size: 11pt;
+    }
+    .modern .item .date {
+        color: #777;
+        font-size: 10pt;
+    }
+    .modern .skills-list, .modern .certificates-list {
+        padding-top: 5px;
+        line-height: 1.6;
+    }
+    .modern ul {
+        list-style-type: disc;
+        list-style-position: outside;
+        padding-left: 20px;
+    }
+    .modern li {
+       /* margin-bottom: 5px; */
+       background: #ecf0f1;
+       border-radius: 3px;
+       padding: 5px 10px;
+       margin-bottom: 5px;
+       display: inline-block;
+       margin-right: 5px;
+    }
+</style>
+<div class="cv-header">
+    <h1>{{name}}</h1>
+    <div class="contact-info">{{contactInfo}}</div>
+</div>
+<div class="section">
+    <div class="section-title">Summary</div>
+    <p>{{summaryContent}}</p>
+</div>
+<div class="section">
+    <div class="section-title">Work Experience</div>
+    {{expArray}}
+</div>
+<div class="section">
+    <div class="section-title">Education</div>
+    {{educationItems}}
+</div>
+<div class="section">
+    <div class="section-title">Skills</div>
+    <div class="skills-list">{{skillsArray}}</div>
+</div>
+<div class="section">
+    <div class="section-title">Certificates</div>
+    <div class="certificates-list">{{certificatesArray}}</div>
+</div> -->
+
+<style>
+    .modern {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.5;
+        color: #444;
+    }
+    .modern .cv-header {
+        margin-bottom: 25px;
+    }
+    .modern .cv-header h1 {
+        font-size: 24pt;
+        color: #2c3e50;
+        margin-bottom: 5px;
+        font-weight: 300;
+        text-align: center;
+    }
+    .modern .contact-info {
+        font-size: 10pt;
+        color: #555;
+        text-align: center;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        padding: 8px 0;
+        margin-bottom: 25px;
+    }
+    .modern .section {
+        margin-bottom: 20px;
+    }
+    .modern .section-title {
+        font-size: 14pt;
+        color: #34495e;
+        margin-bottom: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .modern .item {
+        margin-bottom: 15px;
+    }
+    .modern .item h3 {
+        font-size: 11.5pt;
+        margin-bottom: 2px;
+        font-weight: bold;
+        color: #3498db;
+    }
+    .modern .item .subtitle {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 2px;
+        font-size: 10.5pt;
+    }
+    .modern .item .date {
+        color: #777;
+        font-size: 10pt;
+    }
+    .modern .skills-list, .modern .certificates-list {
+        padding-top: 5px;
+        line-height: 1.6;
+    }
+    .modern ul {
+        list-style-type: disc;
+        list-style-position: outside;
+        padding-left: 20px;
+    }
+    .modern li {
+       /* margin-bottom: 5px; */
+       background: #ecf0f1;
+       border-radius: 3px;
+       padding: 5px 10px;
+       margin-bottom: 5px;
+       display: inline-block;
+       margin-right: 5px;
+    }
+</style>
+<div class="cv-header">
+    <h1>{{name}}</h1>
+    <div class="contact-info">{{contactInfo}}</div>
+</div>
+{{bodySections}}

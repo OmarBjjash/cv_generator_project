@@ -1,0 +1,240 @@
+/* Global Styles and Variables */
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary: #7209b7;
+    --accent: #4cc9f0;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --card-bg: #ffffff;
+    --body-bg: #f0f2f5;
+    --text: #333333;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    --primary: #5a7dff;
+    --primary-dark: #4a6cef;
+    --secondary: #8a3dca;
+    --accent: #6ad8f8;
+    --light: #121212;
+    --dark: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --body-bg: #121212;
+    --text: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --light-gray: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--light-gray);
+    flex-wrap: wrap; /* Added for mobile */
+}
+
+.logo { display: flex; align-items: center; gap: 15px; }
+.logo i { font-size: 2.5rem; color: var(--primary); }
+.logo h1 { font-size: 2.2rem; font-weight: 700; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.logo .tagline { font-size: 0.9rem; color: var(--gray); margin-top: 5px; font-weight: 500; }
+
+.theme-toggle { background: var(--card-bg); border: 1px solid var(--light-gray); border-radius: 30px; padding: 10px 15px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 500; box-shadow: 0 2px 10px var(--shadow); }
+
+.app-container { display: flex; justify-content: center; }
+.form-section { width: 100%; background: var(--card-bg); border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px var(--shadow); }
+.section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 10px; }
+.section-title i { color: var(--primary); }
+
+.form-group { margin-bottom: 20px; }
+label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text); }
+input, select, textarea { width: 100%; padding: 12px 15px; border: 1px solid var(--light-gray); border-radius: 8px; background: var(--body-bg); color: var(--text); font-size: 1rem; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2); }
+
+.btn { padding: 12px 25px; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+.btn-outline:hover { background: var(--primary); color: white; }
+.action-buttons { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+
+.education-level, .experience-item { margin-bottom: 25px; padding: 20px; border: 1px solid var(--light-gray); border-radius: 8px; position: relative; }
+.remove-btn { position: absolute; top: 10px; right: 10px; background: #f44336; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+.add-item { background: var(--light-gray); color: var(--text); padding: 10px 15px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; cursor: pointer; font-weight: 500; margin-bottom: 20px; }
+.add-item:hover { background: var(--primary); color: white; }
+
+footer { text-align: center; padding: 30px 0; margin-top: 50px; border-top: 1px solid var(--light-gray); color: var(--gray); font-size: 0.9rem; }
+.footer-links { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
+.footer-links a { color: var(--gray); text-decoration: none; }
+.footer-links a:hover { color: var(--primary); text-decoration: underline; }
+
+/* Modal Styles */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 1000; }
+.modal-overlay.active { display: flex; }
+.modal-content { background: var(--body-bg); border-radius: 15px; width: 90%; max-width: 900px; height: 90vh; box-shadow: 0 10px 40px rgba(0,0,0,0.3); display: flex; flex-direction: column; }
+.modal-header { padding: 15px 25px; border-bottom: 1px solid var(--light-gray); display: flex; justify-content: space-between; align-items: center; }
+.modal-header h2 { font-size: 1.5rem; }
+.close-btn { background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--text); }
+.modal-body { flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; padding: 20px; }
+.modal-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px; }
+.template-selector { display: flex; gap: 10px; flex-wrap: wrap; }
+.template-selector .template { font-size: 0.9rem; padding: 8px 15px; border: 2px solid var(--light-gray); border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.template-selector .template.active { border-color: var(--primary); background: rgba(67, 97, 238, 0.1); }
+.cv-preview { flex-grow: 1; background: white; border-radius: 8px; overflow-y: auto; color: #333; }
+.cv-preview-content { padding: 30px; }
+
+.fade-in { animation: fadeIn 0.5s ease-in; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Responsive Styles for Mobile */
+@media (max-width: 600px) {
+    .container { padding: 10px; }
+    header { gap: 15px; justify-content: center; }
+    .logo h1 { font-size: 1.8rem; }
+    .form-section { padding: 20px; }
+    .action-buttons { flex-direction: column; }
+    .modal-content { width: 100%; height: 100%; border-radius: 0; }
+    .modal-toolbar { flex-direction: column; }
+    .template-selector { justify-content: center; }
+    .modal-body { padding: 10px; }
+    .cv-preview-content { padding: 15px; }
+}
+
+/* --- NEW & IMPROVED STYLES FOR ITEM CARDS --- */
+/* Replace the previous .item-header, .item-controls, .switch-type-btn, and .remove-btn rules with these. */
+
+/* Replace the existing rule in your main.css file with this one */
+.education-level, .experience-item {
+    position: relative;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    /* Updated padding: top, right, bottom, left */
+    padding: 20px 50px 20px 20px; 
+    margin-bottom: 25px;
+}
+
+/* Flexbox header for clean alignment */
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.item-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Container for the right-side controls */
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Spacing between switcher and remove button */
+}
+
+/* The switcher container */
+.type-switcher {
+    display: flex;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures child corners are clipped */
+}
+
+/* Individual buttons within the switcher */
+.switch-option {
+    padding: 6px 14px;
+    border: none;
+    background-color: transparent;
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.switch-option:first-child {
+    border-right: 1px solid var(--primary);
+}
+
+/* The active state for a switcher button */
+.switch-option.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Replace the old .remove-btn rule with this one */
+.remove-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--light-gray);
+    color: var(--gray);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 10; /* Ensure it's above other header elements */
+}
+
+.remove-btn:hover {
+    background: #f44336;
+    color: white;
+}
+
+/* --- RESPONSIVENESS FOR ITEM CARDS --- */
+/* Add this to the end of your main.css file */
+
+@media (max-width: 500px) {
+    /* Switch the item header to a vertical layout on small screens */
+    .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px; /* Creates space between the title and the controls below it */
+    }
+
+    /* Make the controls container take the full width */
+    .item-controls {
+        width: 100%;
+        justify-content: space-between; /* Pushes switcher to the left and remove button to the right */
+    }
+
+    /* Slightly reduce button padding on small screens to save space */
+    .switch-option {
+        padding: 5px 10px;
+    }
+}
